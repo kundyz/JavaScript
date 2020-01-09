@@ -43,7 +43,6 @@ var btn = d3.select("#filter-btn");
 btn.on("click", function() {
     d3.event.preventDefault();
     var datetime = d3.select("#datetime").property("value");
-    
     if (datetime) {
         var filteredData = tableData.filter(row => row.datetime === datetime);
         populateTable(filteredData);

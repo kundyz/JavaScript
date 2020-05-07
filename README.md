@@ -10,4 +10,4 @@ Task
 
 Output
 
-![logo](/static/images/output.PNG)
+![logo](/images/output.PNG)

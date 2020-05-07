@@ -1,4 +1,4 @@
-// from data.js
+// From data.js
 var tableData = data;
 
 var datum = {
@@ -43,10 +43,25 @@ var btn = d3.select("#filter-btn");
 btn.on("click", function() {
     d3.event.preventDefault();
     var datetime = d3.select("#datetime").property("value");
+    var city = d3.select("#city").property("value");
+    var state = d3.select("#state").property("value");
+    var country = d3.select("#country").property("value");
+    var shape = d3.select("#shape").property("value");
+    var filteredData = tableData;
     if (datetime) {
-        var filteredData = tableData.filter(row => row.datetime === datetime);
-        populateTable(filteredData);
-    } else {
-        populateTable(tableData);
+        filteredData = filteredData.filter(row => row.datetime === datetime);
     }
+    if (city) {
+        filteredData = filteredData.filter(row => row.city === city);
+    }
+    if (state) {
+        filteredData = filteredData.filter(row => row.state === state);
+    }
+    if (country) {
+        filteredData = filteredData.filter(row => row.country === country);
+    }
+    if (shape) {
+        filteredData = filteredData.filter(row => row.shape === shape);
+    }
+    populateTable(filteredData);
 });
